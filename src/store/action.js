@@ -10,7 +10,8 @@ export const Actions = {
     ADD_LIST: 'Add Comment List',
 
     APP_INFO: 'Set App Info',
-    PROGRESS: 'Task in progress'
+    PROGRESS: 'Task in progress',
+    SHOW_LOGIN: 'Show/Hide Login'
 }
 
 export const Method = {

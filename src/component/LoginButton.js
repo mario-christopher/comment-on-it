@@ -13,10 +13,8 @@ export class LoginButton extends React.PureComponent {
             this.props.dispatch(actionCreator(Actions.LOGIN, userName, null));
     }
 
-    onLoginClicked = () => {
-        let userName = 'Martha';
-        this.props.dispatch(actionCreator(Actions.LOGIN, userName, null));
-        Storage.set(userName);
+    onShowLoginClicked = () => {
+        this.props.dispatch(actionCreator(Actions.SHOW_LOGIN, true, null));
     }
 
     onLogoutClicked = () => {
@@ -36,7 +34,7 @@ export class LoginButton extends React.PureComponent {
         else {
             return (
                 <div>
-                    <Button title='Login to add your comments.' onClick={this.onLoginClicked} >Login</Button>
+                    <Button title='Login to add your comments.' onClick={this.onShowLoginClicked} >Login</Button>
                 </div>
             );
         }

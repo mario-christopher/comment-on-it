@@ -14,7 +14,8 @@ const initState = {
     progress: {
         get: false,
         post: false
-    }
+    },
+    showLogin: false
 };
 
 const commentReducer = (state = initState, action) => {
@@ -49,6 +50,11 @@ const commentReducer = (state = initState, action) => {
         case Actions.PROGRESS:
             {
                 return { ...state, progress: action.data };
+            }
+
+        case Actions.SHOW_LOGIN:
+            {
+                return { ...state, showLogin: action.data };
             }
 
         default:
