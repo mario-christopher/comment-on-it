@@ -1,0 +1,40 @@
+{
+  "name": "comment-on-it",
+  "version": "1.1.0",
+  "description": "A webcompnent to add on any site, to provide Comment functionality.",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "babel src -d build",
+    "build:watch": "babel src -w -d build",
+    "prepublish": "npm run build"
+  },
+  "author": "Mario Christopher",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mario-christopher/comment-on-it"
+  },
+  "keywords": [
+    "react",
+    "mongodb",
+    "webtask",
+    "serverless",
+    "styled-components"
+  ],
+  "devDependencies": {
+    "axios": "^0.16.2",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "moment": "^2.19.1",
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "styled-components": "^2.2.1"
+  }
+}
