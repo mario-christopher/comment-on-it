@@ -15,7 +15,6 @@ let apiResponses = {
 
 app.get('/comments', (req, res) => {
 
-    console.log('QP: ', req.webtaskContext.query);
     let appId = req.webtaskContext.query['appId'];
     let instanceId = req.webtaskContext.query['instanceId'];
 
