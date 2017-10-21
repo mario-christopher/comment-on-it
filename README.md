@@ -21,7 +21,7 @@ https://photo-comments.herokuapp.com/
 
 ### Usage
 
-*   ```npm install --save comment-on-it```  *get the component from npm.*
+*   ```npm install --save comment-on-it```  *[see it on npmjs](https://www.npmjs.com/package/comment-on-it)*
 *   Use it in your component.
 ```
 import { CommentOnIt } from 'comment-on-it'
