@@ -1,0 +1,43 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.spc {
+    margin: 5px;
+}
+
+.spc-top {
+    margin-top : 5px;
+}
+
+.spc-bottom {
+    margin-bottom : 5px;
+}
+
+.spc-right {
+    margin-right : 5px;
+}
+
+._row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+._col {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+._stretch {
+    flex: 1;
+}
+
+.comment-add {
+    width: 3.5em;
+}
+
+.header {
+    background: #FFD55F;
+}
