@@ -9,7 +9,7 @@
     "prepublish": "npm run build"
   },
   "author": "Mario Christopher",
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mario-christopher/comment-on-it"
