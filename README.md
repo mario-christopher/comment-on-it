@@ -1,6 +1,6 @@
 ##  comment-on-it
 
-**comment-on-it** is the answer to every Site developer's need to add 'Comments' functionality without breaking a sweat. It is a ReactJs, **Webtask**-based Serverless component that can be used as a regular HTML element anywhere that Comments are needed on a site.
+**comment-on-it** is the answer to every Site developer's need to add 'Comments' functionality without breaking a sweat. It is a ReactJs, **Webtask**-based Serverless component that can be used as a regular ReactJs component anywhere that Comments are needed on a site.
 
 <img alt="screenshot" src="img/CommentOnIt.PNG" height="350px" />
 <br />
