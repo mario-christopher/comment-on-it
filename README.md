@@ -1,10 +1,8 @@
 ##  comment-on-it
 
-**comment-on-it** is the answer to every Site developer's need to add 'Comments' functionality without breaking a sweat. It is a ReactJs-based, **Webtask**-based Serverless webcomponent that can be used as a regular HTML element anywhere that Comments are needed on a site.
+**comment-on-it** is the answer to every Site developer's need to add 'Comments' functionality without breaking a sweat. It is a ReactJs, **Webtask**-based Serverless component that can be used as a regular HTML element anywhere that Comments are needed on a site.
 
-<p align="center">
-  <img src="img/CommentOnIt.png" width="550"/>
-</p>
+![Alt text](img/CommentOnIt.png?raw=true "comment-on-it")
 
 See it in action here, used in a Photo-based static website:
 
@@ -15,9 +13,9 @@ https://photo-comments.herokuapp.com/
 ---
 ### Achitecture:
 
-*   **comment-on-it** is implmented as a Serverless WebComponent.
+*   **comment-on-it** is implemented as a Serverless Component.
 *   The User interface is implemented using [ReactJs](https://reactjs.org/).
-*   It uses a [WebTask](https://webtask.io/) to manage its backend functionality.
+*   It uses a [Webtask](https://webtask.io/) to manage its backend functionality.
 *   [mLab](https://mlab.com/) is a cloud based MongoDB provider, that is used to store the comments from the site.
 
 ### Usage
