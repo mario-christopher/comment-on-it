@@ -55,3 +55,5 @@ import { CommentOnIt } from 'comment-on-it'
 ### Sneak Preview of Version 2.0.0 *(Release date not confirmed yet.)*
 *   Custom Themes to match your website theme.
 *   Integration with [Auth0 Lock](https://auth0.com/lock) screen to enable easy and secure SignIn / SignUp.
+*   Discussion threads (user replies to other comments).
+*   Comment mediation by site admin.
