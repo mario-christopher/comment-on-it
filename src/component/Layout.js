@@ -1,13 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { styles, joinStyles } from '../code/style';
 import { Header } from './Header';
 import { CommentList } from './CommentList';
 import { NewComment } from './NewComment';
-import { Div, Title } from '../element/index';
 import { Login } from './Login';
-
-import '../style/style';
 
 export class Layout extends React.PureComponent {
 
@@ -15,14 +13,13 @@ export class Layout extends React.PureComponent {
         let showLogin = this.props.showLogin;
 
         return (
-            <div>
+            <div style={styles.fontFamily}>
                 {showLogin && <Login />}
-                <Div className={this.props.showLogin ? '_col modal-bg' : '_col'}>
+                <div style={this.props.showLogin ? joinStyles(styles.col, styles.modalBg, styles.div) : joinStyles(styles.col, styles.div)}>
                     <Header header={this.props.header} />
-                    <hr />
                     <CommentList />
                     <NewComment />
-                </Div>               
+                </div>
             </div>
         );
     }

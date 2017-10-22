@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { Storage } from '../code/local-storage';
-import { Label, TextBox, Button, Progress } from '../element/index';
+import { styles, joinStyles } from '../code/style';
+import { Progress } from '../element/index';
 import { Actions, Method, asyncAction } from '../store/action';
 
 export class NewComment extends React.PureComponent {
@@ -29,16 +29,17 @@ export class NewComment extends React.PureComponent {
         let userName = this.props.userName;
         if (userName) {
             return (
-                <div className='_row'>
-                    <TextBox autoFocus type='text'
+                <div style={styles.row}>
+                    <input style={joinStyles(styles.textBox, styles.stretch)}
+                        autoFocus type='text'
                         onKeyPress={this.onKeyPress}
-                        placeholder='your comment' className='_stretch'
-                        innerRef={(input) => { this.textInput = input; }} />
-                    <div className='comment-add'>
+                        placeholder='your comment'
+                        ref={(input) => { this.textInput = input; }} />
+                    <div style={styles.commentAdd}>
                         {this.props.progress.post ?
                             <Progress>I</Progress>
                             :
-                            <Button primary onClick={this.onAddCommentClicked} >Add</Button>
+                            <button style={styles.button} onClick={this.onAddCommentClicked} >Add</button>
                         }
                     </div>
                 </div>
@@ -47,7 +48,7 @@ export class NewComment extends React.PureComponent {
         else {
             return (
                 <div>
-                    <Label>Login to add your comments.</Label>
+                    <label style={styles.label}>Login to add your comments.</label>
                 </div>
             );
         }

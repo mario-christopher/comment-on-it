@@ -2,15 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import { styles } from '../code/style';
 import { Comment } from './Comment';
-import { Label, Progress } from '../element/index';
-import { Actions, Method, asyncAction } from '../store/action';
+import { Progress } from '../element/index';
 
 export class CommentList extends React.PureComponent {
-
-    componentWillMount = () => {
-        this.props.dispatch(asyncAction(Actions.ADD_LIST, `comments?appId=${this.props.appInfo.appId}&instanceId=${this.props.appInfo.instanceId}`, null, Method.GET));
-    }
 
     content = () => {
         let comments = this.props.comments;
@@ -24,7 +20,7 @@ export class CommentList extends React.PureComponent {
         else {
             return (
                 <div>
-                    <Label>Be the first to add a comment.</Label>
+                    <label style={styles.label}>Be the first to add a comment.</label>
                 </div>
             );
         }
@@ -47,7 +43,6 @@ CommentList.propType = {
 const mapStateToProps = (state) => {
     return {
         comments: state.comments.comments,
-        appInfo: state.comments.appInfo,
         progress: state.comments.progress
     };
 }

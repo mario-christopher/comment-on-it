@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { styles } from '../code/style';
 import { Storage } from '../code/local-storage';
-import { Button, Label } from '../element/index';
 import { Actions, actionCreator } from '../store/action';
 
 export class LoginButton extends React.PureComponent {
@@ -26,15 +26,15 @@ export class LoginButton extends React.PureComponent {
         let userName = this.props.userName;
         if (userName) {
             return (
-                <div className='_row'>
-                    <Button title='Logout.' onClick={this.onLogoutClicked} >{'Not ' + userName + ' ? Sign out.'}</Button>
+                <div style={styles.row}>
+                    <button title='Logout' style={styles.button} onClick={this.onLogoutClicked} >{'Not ' + userName + ' ? Sign out.'}</button>
                 </div>
             );
         }
         else {
             return (
                 <div>
-                    <Button title='Login to add your comments.' onClick={this.onShowLoginClicked} >Login</Button>
+                    <button title='Login to add your comments.' style={styles.button} onClick={this.onShowLoginClicked} >Login</button>
                 </div>
             );
         }

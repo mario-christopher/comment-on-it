@@ -1,14 +1,14 @@
 import React from 'react';
 
+import { styles, joinStyles } from '../code/style';
 import { LoginButton } from './LoginButton';
-import { Title } from '../element/index';
 
 export class Header extends React.PureComponent {
 
     render() {
         return (
-            <div className='_row header'>
-                <Title className='_stretch'>{this.props.header}</Title>
+            <div style={joinStyles(styles.row, styles.header)}>
+                <label style={joinStyles(styles.stretch, styles.title)}>{this.props.header}</label>
                 <LoginButton />
             </div>
         )

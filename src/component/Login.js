@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { styles, joinStyles } from '../code/style';
 import { Storage } from '../code/local-storage';
-import { Title, TextBox, Button } from '../element/index';
 import { Actions, actionCreator } from '../store/action';
 
 export class Login extends React.PureComponent {
@@ -11,11 +11,11 @@ export class Login extends React.PureComponent {
         if (e.charCode == 13)
             this.onLoginClicked();
     }
-    
+
     onLoginClicked = () => {
         let userName = this.userName.value;
         let pwd = this.pwd.value;
-        if (userName && pwd){
+        if (userName && pwd) {
             this.props.dispatch(actionCreator(Actions.LOGIN, userName, null));
             Storage.set(userName);
             this.props.dispatch(actionCreator(Actions.SHOW_LOGIN, false, null));
@@ -28,25 +28,25 @@ export class Login extends React.PureComponent {
 
     render() {
         return (
-            <div className='login-parent'>
-                <div className='center'>
-                    <div className='_col login'>
-                        <div className='header'>
-                            <Title className='_stretch'>Login</Title>
+            <div style={styles.loginParent}>
+                <div style={styles.center}>
+                    <div style={joinStyles(styles.col, styles.login)}>
+                        <div style={styles.header}>
+                            <label style={joinStyles(styles.stretch, styles.title)}>Login</label>
                         </div>
-                        <TextBox autoFocus type='text'
+                        <input autoFocus type='text'
                             placeholder='user name'
-                            className='_stretch'
-                            innerRef={(input) => { this.userName = input; }} />
+                            style={styles.textBox}
+                            ref={(input) => { this.userName = input; }} />
 
-                        <TextBox type='password'
+                        <input type='password'
                             onKeyPress={this.onKeyPress}
-                            className='_stretch'
-                            innerRef={(input) => { this.pwd = input; }} />
+                            style={styles.textBox}
+                            ref={(input) => { this.pwd = input; }} />
 
-                        <div className='_row'>
-                            <Button primary onClick={this.onLoginClicked} >Login</Button>
-                            <Button onClick={this.onCancelClicked} >Cancel</Button>
+                        <div style={styles.row}>
+                            <button style={styles.button} onClick={this.onLoginClicked} >Login</button>
+                            <button style={styles.button} onClick={this.onCancelClicked} >Cancel</button>
                         </div>
 
                     </div>

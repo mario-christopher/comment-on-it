@@ -4,44 +4,55 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import PropTypes from 'prop-types';
 
+import { styles } from '../code/style';
 import { appReducer } from '../store/reducer';
 import { Layout } from './Layout';
-import { Label } from '../element/index';
-import { Actions, Method, actionCreator } from '../store/action';
+import { Actions, Method, actionCreator, asyncAction } from '../store/action';
 
-import '../style/style';
+const store = createStore(
+    appReducer,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+    applyMiddleware(thunk));
 
 export class CommentOnIt extends React.PureComponent {
 
-    content = () => {
-        let store = createStore(
-            appReducer,
-            window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-            applyMiddleware(thunk));
+    componentWillMount = () => {
+        this.updateAppInfo(this.props);
+    }
 
+    componentWillReceiveProps = (nextProps, nextContext) => {
+        this.updateAppInfo(nextProps);
+    }
+
+    updateAppInfo = (props) => {
         let appInfo = {
-            appId: this.props.appId,
-            instanceId: this.props.instanceId,
-            header: this.props.header
+            appId: props.appId,
+            instanceId: props.instanceId,
+            header: props.header
         };
         store.dispatch(actionCreator(Actions.APP_INFO, appInfo, null));
+        store.dispatch(asyncAction(Actions.ADD_LIST, `comments?appId=${appInfo.appId}&instanceId=${appInfo.instanceId}`, null, Method.GET));
+    }
 
+    content = () => {
         if (this.props.appId) {
             return (
-                <Provider store={store}>
-                    <Layout header={this.props.header} />
-                </Provider>
+                <Layout header={this.props.header} />
             )
         }
         else {
             return (
-                <Label>Please obtain an AppId and use it with this Comment instance.</Label>
+                <label style={styles.label}>Please obtain an AppId and use it with this Comment instance.</label>
             )
         }
     }
 
     render = () => {
-        return this.content();
+        return (
+            <Provider store={store}>
+                {this.content()}
+            </Provider>
+        );
     }
 }
 
