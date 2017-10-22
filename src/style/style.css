@@ -41,3 +41,28 @@ body {
 .header {
     background: #FFD55F;
 }
+
+.login-parent {
+    position: relative;
+}
+
+.center {
+    position: absolute;
+    left: 50%;
+}
+
+.login {
+    height: 200px;
+    width: 250px;
+    position: relative;
+    left: -50%;
+    top: 50px;
+    border: 1px solid palevioletred;
+    border-radius: 3px;
+    padding: 5px;
+    background: papayawhip;
+}
+
+.modal-bg {
+    background: #C0CCDA;
+}
