@@ -8,6 +8,7 @@ export const Actions = {
 
     ADD: 'Add Comment',
     ADD_LIST: 'Add Comment List',
+    CLEAR_LIST: 'Clear out current comments.',
 
     APP_INFO: 'Set App Info',
     PROGRESS: 'Task in progress',

@@ -31,6 +31,7 @@ export class CommentOnIt extends React.PureComponent {
             header: props.header
         };
         store.dispatch(actionCreator(Actions.APP_INFO, appInfo, null));
+        store.dispatch(actionCreator(Actions.CLEAR_LIST, null, null));
         store.dispatch(asyncAction(Actions.ADD_LIST, `comments?appId=${appInfo.appId}&instanceId=${appInfo.instanceId}`, null, Method.GET));
     }
 

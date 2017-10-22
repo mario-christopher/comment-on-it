@@ -42,6 +42,11 @@ const commentReducer = (state = initState, action) => {
                 return { ...state, comments: [...action.data] };
             }
 
+        case Actions.CLEAR_LIST:
+            {
+                return { ...state, comments: [] };
+            }
+
         case Actions.APP_INFO:
             {
                 return { ...state, appInfo: action.data };
