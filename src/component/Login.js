@@ -32,7 +32,7 @@ export class Login extends React.PureComponent {
                 <div style={styles.center}>
                     <div style={joinStyles(styles.col, styles.login)}>
                         <div style={styles.header}>
-                            <label style={joinStyles(styles.stretch, styles.title)}>Login</label>
+                            <label style={joinStyles(styles.stretch, styles.title)}>Login/Signup</label>
                         </div>
                         <input autoFocus type='text'
                             placeholder='user name'
