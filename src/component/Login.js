@@ -34,31 +34,28 @@ export class Login extends React.PureComponent {
                         <div style={styles.header}>
                             <label style={joinStyles(styles.stretch, styles.title)}>Login/Signup</label>
                         </div>
+                        <label style={joinStyles(styles.label3, styles.spcTop)}>User name: *</label>
                         <input autoFocus type='text'
-                            placeholder='user name'
-                            style={styles.textBox}
+                            placeholder='User Name'
+                            style={styles.textBox2}
                             ref={(input) => { this.userName = input; }} />
 
+                        <label style={joinStyles(styles.label3, styles.spcTop)}>Password: *</label>
                         <input type='password'
                             onKeyPress={this.onKeyPress}
-                            style={styles.textBox}
+                            style={styles.textBox2}
                             ref={(input) => { this.pwd = input; }} />
 
                         <div style={styles.row}>
+                            <span style={styles.stretch}></span>
                             <button style={styles.button} onClick={this.onLoginClicked} >Login</button>
                             <button style={styles.button} onClick={this.onCancelClicked} >Cancel</button>
                         </div>
-
                     </div>
-
                 </div>
             </div>
         )
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-    };
-}
-Login = connect(mapStateToProps)(Login);
+Login = connect()(Login);

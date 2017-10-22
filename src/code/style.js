@@ -25,6 +25,15 @@ export const styles = {
         borderRadius: '3px',
     },
 
+    textBox2: {
+        padding: '0.5em',
+        margin: '0 0.5em',
+        fontSize: '16px',
+        color: 'palevioletred',
+        border: '1px solid papayawhip',
+        borderRadius: '3px',
+    },
+
     div: {
         fontSize: '14px',
         border: '1px solid #FFD55F',
@@ -47,6 +56,13 @@ export const styles = {
     label2: {
         margin: '2px 4px',
         fontSize: '14px',
+        color: 'palevioletred'
+    },
+
+    label3: {
+        margin: '0.5em',
+        margin: '2px 10px',
+        fontSize: '16px',
         color: 'palevioletred'
     },
 
@@ -78,6 +94,10 @@ export const styles = {
         flex: 1
     },
 
+    spcTop: {
+        marginTop: '10px'
+    },
+
     commentAdd: {
         width: '3.5em'
     },
@@ -96,11 +116,11 @@ export const styles = {
     },
 
     login: {
-        height: '225px',
+        height: '260px',
         width: '250px',
         position: 'relative',
         left: '-50%',
-        top: '50px',
+        top: '10px',
         border: '1px solid palevioletred',
         borderRadius: '3px',
         padding: '5px',
